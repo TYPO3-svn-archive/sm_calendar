@@ -1,0 +1,180 @@
+.tx-sm-calendar{
+    font-family: 'Cabin', sans-serif;
+}
+
+.tx-sm-calendar a img {border: none;}
+
+.tx-sm-calendar .modeSwitch{
+    margin-left: 10px;
+}
+
+.tx-sm-calendar .rightCol{
+    padding-left: 220px;
+}
+
+.calendar a{
+    text-decoration: none;
+    color: #434242;
+}
+
+.calendar a:hover{
+    text-decoration: underline;
+}
+
+.monthNavigation {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #086871;
+}
+.monthNavigation a {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    margin: 0 25px;
+}
+.calendar table {
+    margin-bottom: 10px;
+    border-collapse:collapse;
+    -moz-box-shadow: 5px 5px 2px #bababa;
+    -webkit-box-shadow: 5px 5px 2px #bababa;
+    box-shadow: 5px 5px 2px #bababa;
+    font-family: 'Cabin', sans-serif;
+    behavior: url(PIE.htc);
+}
+.calendar .CalDay{
+    display:block;
+    color: #616161;
+    margin-right: 7px;
+    font-size: 14px;
+    text-align: right;
+}
+.calendar .today{
+    color: #f00 !important;
+}
+.calendar table th, .calendar table td {
+    width: 75px;
+    height: 100px;
+    text-align: left;
+    vertical-align:top;
+}
+.calendar table td.weekend {
+    width: 120px;
+}
+.calendar table th {
+   height: 48px;
+   vertical-align:middle;
+   text-align: center;
+   font-size: 14px;
+}
+.calendar table th {
+   border-bottom: 4px double #000 !important;
+}
+.calendar table td.odd {
+    background-color: #f9f9f9;
+}
+.calendar table th.odd {
+    background-color: #efefef;
+}
+.calendar table td{
+    border-bottom: 1px solid #616161;
+}
+.calendar table tr:last-of-type{
+    /*border-bottom: none;  */
+}
+.calendarTogglers {
+    float: left;
+    margin: 40px 5px 0 0;
+    width: 215px;
+}
+.CalendarToggler{
+    text-decoration: none;
+    font-size: 13px;
+    color: #616161;
+    display: block;
+    width: 105%;
+    margin-bottom: 20px;
+}
+.CalendarToggler .bubbel{
+    display:block;
+    float:left;
+    margin-right: 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url('/typo3conf/ext/sm_calendar/Resources/Public/css/PIE.htc');
+    background-color: red;
+    height: 17px;
+    width: 17px;
+}
+.disabled .bubbel{
+    background-color: white !important;
+    border: 2px solid grey;
+    height: 13px;
+    width: 13px;
+}
+.calendarTogglers .addLink{
+    float:right;
+    text-decoration: none;
+}
+.appointment, .listEntry {
+    font-size: 11px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.listEntry a{
+    color:inherit !important;
+    text-decoration: underline;
+}
+.listEntry a:hover{
+    color: #000 !important;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
+
+/* tooltip styling. by default the element to be styled is .tooltip  */
+.tooltip {
+    display:none;
+    background:transparent url(../img/tooltip/black_arrow.png);
+    font-size:12px;
+    height:80px;
+    width:160px;
+    padding:16px 25px 25px;
+    color:#eee;
+}
+
+.tooltip a {
+    color: #8aabeb;
+    text-decoration: underline;
+}
+/* style the trigger elements */
+#demo img {
+    border:0;
+    cursor:pointer;
+    margin:0 1px;
+}
+
+/* override the arrow image of the tooltip */
+.tooltip.bottom {
+    background:url(../img/tooltip/black_arrow_bottom.png);
+    padding-top:30px;
+    height:60px;
+}
+
+.tooltip.bottom {
+    background:url(../img/tooltip/black_arrow_bottom.png);
+}

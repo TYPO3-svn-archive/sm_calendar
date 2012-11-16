@@ -1,0 +1,14 @@
+plugin.tx_smcalendar {
+	view {
+		# cat=plugin.tx_smcalendar/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:sm_calendar/Resources/Private/Templates/
+		# cat=plugin.tx_smcalendar/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:sm_calendar/Resources/Private/Partials/
+		# cat=plugin.tx_smcalendar/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:sm_calendar/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_smcalendar//a; type=string; label=Default storage PID
+		storagePid = 
+	}
+}

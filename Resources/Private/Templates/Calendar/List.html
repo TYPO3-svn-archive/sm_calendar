@@ -1,0 +1,71 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+{namespace m=Tx_SmCalendar_ViewHelpers}
+<f:section name="main">
+    <div class="wrap clearfix"><!-- 2 col-layout -->
+
+        <div class="calendarTogglers"><!-- Calendaroverview and menu -->
+            <f:for each="{calendars}" as="calendar">
+                <a target="_blank" class="addLink" href="{calendar.addLink}" title="zu meinem Googlekonto hinzufügen">
+                    <f:image src="{f:uri.resource(path:'Icons/Add.gif')}" title="zu meinem Googlekonto hinzufügen" alt="zu meinem Googlekonto hinzufügen" />
+                </a>
+                <a href="javascript:void(0)" class="CalendarToggler" id="Calendar_{calendar.uid}" rel="{calendar.uid}">{calendar.title}<span class="bubbel" style="background: -moz-linear-gradient(top,  {calendar.color} 0%, {calendar.darkerColor} 100%);
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,{calendar.color}), color-stop(100%,{calendar.darkerColor}));
+                    background: -webkit-linear-gradient(top,  {calendar.color} 0%,{calendar.darkerColor} 100%);
+                    background: -o-linear-gradient(top,  {calendar.color} 0%,{calendar.darkerColor} 100%);
+                    background: -ms-linear-gradient(top,  {calendar.color} 0%,{calendar.darkerColor} 100%);
+                    background: linear-gradient(top,  {calendar.color} 0%,{calendar.darkerColor} 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{calendar.color}', endColorstr='{calendar.darkerColor}',GradientType=0 );
+                    background-color: {calendar.color}"></span></a>
+            </f:for>
+        </div>
+
+        <div class="rightCol">
+            <div class="monthNavigation">
+                <f:link.page addQueryString="1" additionalParams="{tx_smcalendar_smcalendar: {displaydate: previousMonth}}" >
+                     <f:image src="{f:uri.resource(path:'Icons/arrow_left.gif')}" title="{f:translate(key:\"tx_smcalendar_domain_model_calendar.previousMonth\")}" alt="{f:translate(key:\"tx_smcalendar_domain_model_calendar.previousMonth\")}" /></f:link.page>
+                <f:translate key="tx_smcalendar_domain_model_calendar.month{currentMonthNumericSingle}" /> {currentYear}
+                <f:link.page addQueryString="1" additionalParams="{tx_smcalendar_smcalendar: {displaydate: nextMonth}}" >
+                    <f:image src="{f:uri.resource(path:'Icons/arrow_right.gif')}" title="{f:translate(key:\"tx_smcalendar_domain_model_calendar.nextMonth\")}" alt="{f:translate(key:\"tx_smcalendar_domain_model_calendar.nextMonth\")}" />
+                </f:link.page>
+            </div>
+            <div class="calendar">
+                <f:if condition="{listPerspective}">
+                    <f:then> <!-- listPerspective -->
+                        <m:calendarListPerspective preRenderContent="{preRenderContent}" />
+                        <br/>
+                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 0}}" >zur Kalendaransicht</f:link.page>
+                    </f:then>
+                    <f:else> <!-- gridPerspective -->
+                        <table>
+                            <thead>
+                                <th class="odd"><f:translate key="tx_smcalendar_domain_model_calendar.monday" /></th>
+                                <th class="even"><f:translate key="tx_smcalendar_domain_model_calendar.tuesday" /></th>
+                                <th class="odd"><f:translate key="tx_smcalendar_domain_model_calendar.wednesday" /></th>
+                                <th class="even"><f:translate key="tx_smcalendar_domain_model_calendar.thursday" /></th>
+                                <th class="odd"><f:translate key="tx_smcalendar_domain_model_calendar.friday" /></th>
+                                <th class="even weekend"><f:translate key="tx_smcalendar_domain_model_calendar.saturday" /></th>
+                                <th class="odd weekend"><f:translate key="tx_smcalendar_domain_model_calendar.sunday" /></th>
+                            </thead>
+                            <tbody>
+                                <m:calendarBody preRenderContent="{preRenderContent}" />
+                            </tbody>
+                        </table>
+                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 1}}" >zur Listenansicht</f:link.page>
+                    </f:else>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</f:section>

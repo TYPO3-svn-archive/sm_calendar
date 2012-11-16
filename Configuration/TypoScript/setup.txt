@@ -1,0 +1,43 @@
+plugin.tx_smcalendar {
+	view {
+		templateRootPath = {$plugin.tx_smcalendar.view.templateRootPath}
+		partialRootPath = {$plugin.tx_smcalendar.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_smcalendar.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_smcalendar.persistence.storagePid}
+	}
+}
+page.includeJS {
+    jQuery = EXT:sm_calendar/Resources/Public/js/jquery-1.7.2.min.js
+    jquery-cookie = EXT:sm_calendar/Resources/Public/js/jquery-cookie.js
+    jquery-tools = EXT:sm_calendar/Resources/Public/js/jquery.tools.min.js
+    calendar = EXT:sm_calendar/Resources/Public/js/calendar.js
+}
+page.includeCSS{
+    default = EXT:sm_calendar/Resources/Public/css/default.css
+}
+page.headerData.9873 = TEXT
+page.headerData.9873 {
+value (
+<link href='http://fonts.googleapis.com/css?family=Cabin:400,700' rel='stylesheet' type='text/css'>
+)
+plugin.tx_smcalendar._CSS_DEFAULT_STYLE (
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-sm-calendar table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-sm-calendar table th {
+		font-weight:bold;
+	}
+
+	.tx-sm-calendar table td {
+		vertical-align:top;
+	}
+)

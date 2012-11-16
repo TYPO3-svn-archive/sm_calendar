@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the SM - Calendar extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            <label index="tx_smcalendar_domain_model_calendar.monday">Montag</label>
+            <label index="tx_smcalendar_domain_model_calendar.tuesday">Dienstag</label>
+            <label index="tx_smcalendar_domain_model_calendar.wednesday">Mittwoch</label>
+            <label index="tx_smcalendar_domain_model_calendar.thursday">Donnerstag</label>
+            <label index="tx_smcalendar_domain_model_calendar.friday">Freitag</label>
+            <label index="tx_smcalendar_domain_model_calendar.saturday">Samstag</label>
+            <label index="tx_smcalendar_domain_model_calendar.sunday">Sonntag</label>
+            <label index="tx_smcalendar_domain_model_calendar.month01">Januar</label>
+            <label index="tx_smcalendar_domain_model_calendar.month02">Februar</label>
+            <label index="tx_smcalendar_domain_model_calendar.month03">März</label>
+            <label index="tx_smcalendar_domain_model_calendar.month04">April</label>
+            <label index="tx_smcalendar_domain_model_calendar.month05">Mai</label>
+            <label index="tx_smcalendar_domain_model_calendar.month06">Juni</label>
+            <label index="tx_smcalendar_domain_model_calendar.month07">Juli</label>
+            <label index="tx_smcalendar_domain_model_calendar.month08">August</label>
+            <label index="tx_smcalendar_domain_model_calendar.month09">September</label>
+            <label index="tx_smcalendar_domain_model_calendar.month10">Oktober</label>
+            <label index="tx_smcalendar_domain_model_calendar.month11">November</label>
+            <label index="tx_smcalendar_domain_model_calendar.month12">Dezember</label>
+            <label index="tx_smcalendar_domain_model_calendar.nextMonth">nächster Monat</label>
+            <label index="tx_smcalendar_domain_model_calendar.previousMonth">vorheriger Monat</label>
+            <label index="tx_smcalendar_domain_model_calendar.googleAdd">zu meinem Googlekonto hinzufügen</label>
+            <label index="tx_smcalendar_domain_model_calendar">Calendar</label>
+			<label index="tx_smcalendar_domain_model_calendar.squad">also used as title</label>
+			<label index="tx_smcalendar_domain_model_appointment">Appointment</label>
+			<label index="tx_smcalendar_domain_model_appointment.calendar_date">calendarDate</label>
+			<label index="tx_smcalendar_domain_model_appointment.start_time">startTime</label>
+			<label index="tx_smcalendar_domain_model_appointment.end_time">endTime</label>
+			<label index="tx_smcalendar_domain_model_appointment.location">location</label>
+			<label index="tx_smcalendar_domain_model_appointment.description">description</label>
+			<label index="tx_smcalendar_domain_model_appointment.calendar">calendar</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'sm_calendar'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_smcalendar_domain_model_calendar">Calendar</label>
+			<label index="tx_smcalendar_domain_model_appointment.calendar_date">Calendar Date</label>
+            <label index="tx_smcalendar_domain_model_calendar.title">Titel</label>
+            <label index="tx_smcalendar_domain_model_calendar.i_cal_address">iCal Adresse</label>
+			<label index="tx_smcalendar_domain_model_appointment.start_time">Start Time</label>
+			<label index="tx_smcalendar_domain_model_appointment.end_time">End Time</label>
+			<label index="tx_smcalendar_domain_model_appointment.location">Location</label>
+            <label index="tx_smcalendar_domain_model_appointment.color">Farbe</label>
+            <label index="tx_smcalendar_domain_model_appointment.addLink">Add Link</label>
+            <label index="tx_smcalendar_domain_model_appointment.description">Description</label>
+            <label index="tx_smcalendar_domain_model_appointment.calendar">Calendar</label>
+
+		</languageKey>
+	</data>
+</T3locallang>
