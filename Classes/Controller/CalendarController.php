@@ -95,6 +95,7 @@ class Tx_SmCalendar_Controller_CalendarController extends Tx_Extbase_MVC_Control
         $this->view->assign('calendars', $calendars);
         $this->view->assign('nextMonth', $this->nextMonth);
         $this->view->assign('previousMonth', $this->previousMonth);
+        $this->view->assign('currentMonth', $this->currentMonth);
         $this->view->assign('currentMonthNumericSingle', $this->currentMonthNumericSingle);
         $this->view->assign('currentYear', $this->currentYear);
 	}

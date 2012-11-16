@@ -1,16 +1,4 @@
 <f:layout name="Default" />
-
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 {namespace m=Tx_SmCalendar_ViewHelpers}
 <f:section name="main">
     <div class="wrap clearfix"><!-- 2 col-layout -->
@@ -45,7 +33,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                     <f:then> <!-- listPerspective -->
                         <m:calendarListPerspective preRenderContent="{preRenderContent}" />
                         <br/>
-                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 0}}" >zur Kalendaransicht</f:link.page>
+                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 0, displaydate: currentMonth}}" >zur Kalendaransicht</f:link.page>
                     </f:then>
                     <f:else> <!-- gridPerspective -->
                         <table>
@@ -62,7 +50,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                                 <m:calendarBody preRenderContent="{preRenderContent}" />
                             </tbody>
                         </table>
-                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 1}}" >zur Listenansicht</f:link.page>
+                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 1, displaydate: currentMonth}}" >zur Listenansicht</f:link.page>
                     </f:else>
                 </f:if>
             </div>
