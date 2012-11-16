@@ -12,7 +12,7 @@
     padding-left: 220px;
 }
 
-.calendar a{
+.calendarTogglers a.CalendarTogglerAll,.calendar a{
     text-decoration: none;
     color: #434242;
 }
