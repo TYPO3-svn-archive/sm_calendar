@@ -35,35 +35,57 @@ $(document).ready(function(){
         });
     });
 
-    $(".CalendarTogglerAll").click(function(){
-        cals = $(".CalendarToggler");
 
-        if ($(".CalendarTogglerAll").attr('rel') == 1){
+    //ugly²
+    $(".CalendarTogglerAll").click(function(){
+        var style;
+        var allDisabled = 1;
+        cals = $(".CalendarToggler");
+        if ($(".CalendarTogglerAll").attr('rel') == 0){
 
             $.each(cals, function(key, value) {
                 var id = $(this).attr('rel');
-
-                $(".calendar_"+id).show();
-                $("#Calendar_"+id).removeClass('disabled');
-                newStyle = $("#Calendar_"+id+" .bubbel").attr('rel');
-                $("#Calendar_"+id+" .bubbel").attr('style', newStyle);
-                $.cookie('calendar_'+id, 0); // set cookie
+                if (!$("#Calendar_"+id).hasClass('disabled')){
+                    $(".calendar_"+id).hide();
+                    $("#Calendar_"+id).addClass('disabled');
+                    style = $("#Calendar_"+id+" .bubbel").attr('style');
+                    $("#Calendar_"+id+" .bubbel").attr('rel', style);
+                    $("#Calendar_"+id+" .bubbel").attr('style', '');
+                    $.cookie('calendar_'+id, 1); // set cookie
+                    allDisabled = 0;
+                }
             });
-            $(".CalendarTogglerAll").attr('rel', 0);
-
+            //TODO: ugly
+            if (allDisabled == 1){
+                $.each(cals, function(key, value) {
+                    var id = $(this).attr('rel');
+                    if ($("#Calendar_"+id).hasClass('disabled')){
+                        $(".calendar_"+id).show();
+                        $("#Calendar_"+id).removeClass('disabled');
+                        style = $("#Calendar_"+id+" .bubbel").attr('rel');
+                        $("#Calendar_"+id+" .bubbel").attr('style', style);
+                        $("#Calendar_"+id+" .bubbel").attr('rel', '');
+                        $.cookie('calendar_'+id, 0); // set cookie
+                    }
+                });
+                $(".CalendarTogglerAll").attr('rel', '0');
+            } else {
+                $(".CalendarTogglerAll").attr('rel', '1');
+            }
         } else {
 
             $.each(cals, function(key, value) {
                 var id = $(this).attr('rel');
-
-                $(".calendar_"+id).hide();
-                $("#Calendar_"+id).addClass('disabled');
-                oldStyle = $("#Calendar_"+id+" .bubbel").attr('style');
-                $("#Calendar_"+id+" .bubbel").attr('style', '');
-                $("#Calendar_"+id+" .bubbel").attr('rel', oldStyle);
-                $.cookie('calendar_'+id, 1); // set cookie
+                if ($("#Calendar_"+id).hasClass('disabled')){
+                    $(".calendar_"+id).show();
+                    $("#Calendar_"+id).removeClass('disabled');
+                    style = $("#Calendar_"+id+" .bubbel").attr('rel');
+                    $("#Calendar_"+id+" .bubbel").attr('style', style);
+                    $("#Calendar_"+id+" .bubbel").attr('rel', '');
+                    $.cookie('calendar_'+id, 0); // set cookie
+                }
             });
-            $(".CalendarTogglerAll").attr('rel', 1);
+            $(".CalendarTogglerAll").attr('rel', '0');
 
         }
 
