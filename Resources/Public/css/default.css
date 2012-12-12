@@ -5,7 +5,8 @@
 .tx-sm-calendar a img {border: none;}
 
 .tx-sm-calendar .modeSwitch{
-    margin-left: 10px;
+    text-decoration: none;
+    color: #434242;
 }
 
 .tx-sm-calendar .rightCol{
@@ -83,7 +84,7 @@
 }
 .calendarTogglers {
     float: left;
-    margin: 40px 5px 0 0;
+    margin: 20px 5px 0 0;
     width: 215px;
 }
 .CalendarToggler{
@@ -151,7 +152,7 @@ html[xmlns] .clearfix {
     display:none;
     background:transparent url(../img/tooltip/black_arrow.png);
     font-size:12px;
-    height:80px;
+    height:100px;
     width:160px;
     padding:16px 25px 25px;
     color:#eee;
@@ -172,7 +173,7 @@ html[xmlns] .clearfix {
 .tooltip.bottom {
     background:url(../img/tooltip/black_arrow_bottom.png);
     padding-top:30px;
-    height:60px;
+    height:90px;
 }
 
 .tooltip.bottom {

@@ -1,10 +1,20 @@
-<f:layout name="Default" />
+<f:layout name="Default"/>
 {namespace m=Tx_SmCalendar_ViewHelpers}
 <f:section name="main">
     <div class="wrap clearfix"><!-- 2 col-layout -->
 
         <div class="calendarTogglers"><!-- Calendaroverview and menu -->
-            <p><a href="javascript:void(0)" class="CalendarTogglerAll" rel="0">Alle ein-/ausblenden</a></p>
+            <p>
+                <f:if condition="{listPerspective}">
+                    <f:then>
+                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 0, displaydate: currentMonth}}" >zur Kalendaransicht</f:link.page>
+                    </f:then>
+                    <f:else>
+                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 1, displaydate: currentMonth}}" >zur Listenansicht</f:link.page>
+                    </f:else>
+                </f:if><br/>
+                <a href="javascript:void(0)" class="CalendarTogglerAll" rel="0">Alle ein-/ausblenden</a>
+            </p>
             <f:for each="{calendars}" as="calendar">
                 <a target="_blank" class="addLink" href="{calendar.addLink}" title="zu meinem Googlekonto hinzufügen">
                     <f:image src="{f:uri.resource(path:'Icons/Add.gif')}" title="zu meinem Googlekonto hinzufügen" alt="zu meinem Googlekonto hinzufügen" />
@@ -33,8 +43,6 @@
                 <f:if condition="{listPerspective}">
                     <f:then> <!-- listPerspective -->
                         <m:calendarListPerspective preRenderContent="{preRenderContent}" />
-                        <br/>
-                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 0, displaydate: currentMonth}}" >zur Kalendaransicht</f:link.page>
                     </f:then>
                     <f:else> <!-- gridPerspective -->
                         <table>
@@ -51,7 +59,6 @@
                                 <m:calendarBody preRenderContent="{preRenderContent}" />
                             </tbody>
                         </table>
-                        <f:link.page class="modeSwitch" additionalParams="{tx_smcalendar_smcalendar: {listPerspective: 1, displaydate: currentMonth}}" >zur Listenansicht</f:link.page>
                     </f:else>
                 </f:if>
             </div>
