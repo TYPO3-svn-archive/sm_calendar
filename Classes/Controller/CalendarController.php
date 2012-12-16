@@ -195,11 +195,11 @@ class Tx_SmCalendar_Controller_CalendarController extends Tx_Extbase_MVC_Control
         foreach ($entries as $entry){
             $unixTimeStampStart = $this->iCalDateToUnixTimestamp($entry['DTSTART']);
             $day = date("j",$unixTimeStampStart);
-            $startHour = date("H",$unixTimeStampStart)+2;
+            $startHour = date("H",$unixTimeStampStart)+1;
             $entry['starttime'] = $startHour.':'.date("i",$unixTimeStampStart);
 
             $unixTimeStampEnd = $this->iCalDateToUnixTimestamp($entry['DTEND']);
-            $endHour = date("H",$unixTimeStampEnd)+2;
+            $endHour = date("H",$unixTimeStampEnd)+1;
             $entry['endtime'] = $endHour.':'.date("i",$unixTimeStampEnd);
             $appointments[$day][] = $entry;
         }
