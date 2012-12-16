@@ -18,6 +18,10 @@
     color: #434242;
 }
 
+.calendarTogglers a:hover{
+    text-decoration: underline;
+}
+
 .calendar a:hover{
     text-decoration: underline;
 }
