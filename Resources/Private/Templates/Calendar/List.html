@@ -32,10 +32,10 @@
 
         <div class="rightCol">
             <div class="monthNavigation">
-                <f:link.page addQueryString="1" additionalParams="{tx_smcalendar_smcalendar: {displaydate: previousMonth}}" >
+                <f:link.page addQueryString="1" argumentsToBeExcludedFromQueryString="{id:1}" additionalParams="{tx_smcalendar_smcalendar: {displaydate: previousMonth}}" >
                      <f:image src="{f:uri.resource(path:'Icons/arrow_left.gif')}" title="{f:translate(key:\"tx_smcalendar_domain_model_calendar.previousMonth\")}" alt="{f:translate(key:\"tx_smcalendar_domain_model_calendar.previousMonth\")}" /></f:link.page>
                 <f:translate key="tx_smcalendar_domain_model_calendar.month{currentMonthNumericSingle}" /> {currentYear}
-                <f:link.page addQueryString="1" additionalParams="{tx_smcalendar_smcalendar: {displaydate: nextMonth}}" >
+                <f:link.page addQueryString="1" argumentsToBeExcludedFromQueryString="{id:1}" additionalParams="{tx_smcalendar_smcalendar: {displaydate: nextMonth}}" >
                     <f:image src="{f:uri.resource(path:'Icons/arrow_right.gif')}" title="{f:translate(key:\"tx_smcalendar_domain_model_calendar.nextMonth\")}" alt="{f:translate(key:\"tx_smcalendar_domain_model_calendar.nextMonth\")}" />
                 </f:link.page>
             </div>

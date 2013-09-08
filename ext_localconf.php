@@ -17,4 +17,8 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	)
 );
 
+if (!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations'][$_EXTKEY])) {
+	$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations'][$_EXTKEY] = array();
+}
+
 ?>

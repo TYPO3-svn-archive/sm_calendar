@@ -23,6 +23,9 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+require_once(t3lib_extMgm::extPath('sm_calendar') .'Classes/Service/Ical.php' );
+require_once(t3lib_extMgm::extPath('sm_calendar') .'Classes/Service/DateCalculation.php' );
+
 /**
  * Test case for class Tx_SmCalendar_Domain_Model_Calendar.
  *
@@ -49,54 +52,11 @@ class Tx_SmCalendar_Domain_Model_CalendarTest extends Tx_Extbase_Tests_Unit_Base
 	}
 
 	/**
+	 * Tests method getEntries
 	 * @test
 	 */
-	public function getTitleReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setTitleForStringSetsTitle() { 
-		$this->fixture->setTitle('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getTitle()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getICalAddressReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setICalAddressForStringSetsICalAddress() { 
-		$this->fixture->setICalAddress('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getICalAddress()
-		);
-	}
-	
-	/**
-	 * @test
-	 */
-	public function getAddLinkReturnsInitialValueForString() { }
-
-	/**
-	 * @test
-	 */
-	public function setAddLinkForStringSetsAddLink() { 
-		$this->fixture->setAddLink('Conceived at T3CON10');
-
-		$this->assertSame(
-			'Conceived at T3CON10',
-			$this->fixture->getAddLink()
-		);
+	public function testGetEntries(){
+		$this->assertEquals($this->fixture->getEntries('dummy'), array());
 	}
 	
 }

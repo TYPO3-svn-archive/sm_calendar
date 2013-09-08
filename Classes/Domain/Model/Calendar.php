@@ -23,6 +23,8 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+require_once(t3lib_extMgm::extPath('sm_calendar') .'Classes/Service/DateCalculation.php' );
+
 /**
  *
  *
@@ -162,6 +164,29 @@ class Tx_SmCalendar_Domain_Model_Calendar extends Tx_Extbase_DomainObject_Abstra
 	 */
 	public function setAddLink($addLink) {
 		$this->addLink = $addLink;
+	}
+
+	/**
+	 * @param string $monthToDisplay
+	 * @return array
+	 */
+	public function getEntries($monthToDisplay){
+		$cacheIdentifier = md5($this->getICalAddress());
+		if (FALSE === ($ical = $GLOBALS['typo3CacheManager']->getCache('sm_calendar')->get('ical_'.$cacheIdentifier))){
+			$ical = new ICal($this->getICalAddress());
+			$GLOBALS['typo3CacheManager']->getCache('sm_calendar')->set('ical_'.$cacheIdentifier, $ical, array(), 86400);
+		}
+		$color = $this->getColor();
+		$events = $ical->events();
+		$entries = array();
+		foreach ($events as $event){
+			if (date("m_Y",dateCalculation::iCalDateToUnixTimestamp($event['DTSTART'])) == $monthToDisplay){
+				$event['calendar'] = $this->getUid();
+				$event['color'] = $color;
+				$entries[] = $event;
+			}
+		}
+		return $entries;
 	}
 
 }
