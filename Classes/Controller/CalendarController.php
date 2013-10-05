@@ -190,14 +190,21 @@ class Tx_SmCalendar_Controller_CalendarController extends Tx_Extbase_MVC_Control
         foreach ($entries as $entry){
             $unixTimeStampStart = dateCalculation::iCalDateToUnixTimestamp($entry['DTSTART']);
             $day = date("j",$unixTimeStampStart);
-            $startHour = date("H",$unixTimeStampStart)+2;
-            $entry['starttime'] = $startHour.':'.date("i",$unixTimeStampStart);
+            $adjust = 2;
+			if ('0' === date("I",$unixTimeStampStart)){
+				$adjust = 1;
+			}
+			$startHour = date("H",$unixTimeStampStart)+$adjust;
+			$entry['starttime'] = $startHour.':'.date("i",$unixTimeStampStart);
 
             $unixTimeStampEnd = dateCalculation::iCalDateToUnixTimestamp($entry['DTEND']);
-            $endHour = date("H",$unixTimeStampEnd)+2;
+			if ('0' === date("I",$unixTimeStampEnd)){
+				$adjust = 1;
+			}
+			$endHour = date("H",$unixTimeStampEnd)+$adjust;
             $entry['endtime'] = $endHour.':'.date("i",$unixTimeStampEnd);
             $appointments[$day][] = $entry;
-        }
+		}
 
 
         for ($i=0; $i !== $this->firstDayOfMonth; $i++){
